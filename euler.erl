@@ -8,14 +8,14 @@ problem1(N) ->
 
 % Problem 2 from Euler project
 %
-problem2(Lim) ->
-    problem2(Lim, 1, 2, 0, fun(N) -> N rem 2 =:= 0 end).
+problem2(Limit) ->
+    problem2(Limit, 1, 1, 0, fun(N) -> N rem 2 =:= 0 end).
 
-problem2(Lim,  _, N1, Sum, _) when N1 >= Lim -> Sum;
-problem2(Lim, N0, N1, Sum, F)                ->
+problem2(Limit,  _, N1, Sum, _) when N1 > Limit -> Sum;
+problem2(Limit, N0, N1, Sum, F)                 ->
     N2 = N0 + N1,
     case F(N1) of
-        true  -> problem2(Lim, N1, N2, Sum+N1, F);
-        false -> problem2(Lim, N1, N2, Sum   , F)
+        true  -> problem2(Limit, N1, N2, Sum+N1, F);
+        false -> problem2(Limit, N1, N2, Sum   , F)
     end.
 
