@@ -1,7 +1,7 @@
 -module(euler).
 -export([ problem1/1
-	, problem2/1
-	]).
+        , problem2/1
+        ]).
 
 % Problem 1 from Euler project
 %
